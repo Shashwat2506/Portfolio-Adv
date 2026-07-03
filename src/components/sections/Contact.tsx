@@ -26,6 +26,7 @@ function TerminalUI() {
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [booted, setBooted] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const idRef = useRef(0);
 
@@ -43,9 +44,12 @@ function TerminalUI() {
     });
   }, [booted]);
 
-  // Auto-scroll
+  // Auto-scroll the terminal body only — NOT the whole page
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
+    const body = terminalBodyRef.current;
+    if (body) {
+      body.scrollTop = body.scrollHeight;
+    }
   }, [lines]);
 
   const handleCommand = (cmd: string) => {
@@ -141,7 +145,7 @@ function TerminalUI() {
       </div>
 
       {/* Terminal body */}
-      <div className="h-72 overflow-y-auto p-4 space-y-1 font-mono-custom text-xs" id="terminal-body">
+      <div ref={terminalBodyRef} className="h-72 overflow-y-auto p-4 space-y-1 font-mono-custom text-xs" id="terminal-body">
         {lines.map((line) => (
           <motion.div
             key={line.id}
@@ -171,7 +175,6 @@ function TerminalUI() {
           placeholder="type a command..."
           autoComplete="off"
           spellCheck={false}
-          autoFocus
         />
         <div className="terminal-cursor" />
       </div>

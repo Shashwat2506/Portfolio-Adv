@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Shashwat Holkar — Full Stack Developer & AI Enthusiast",
@@ -44,6 +45,19 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Disable browser scroll-restoration BEFORE hydration so the page always loads at the top */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                if ('scrollRestoration' in history) {
+                  history.scrollRestoration = 'manual';
+                }
+                window.scrollTo(0, 0);
+              }
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -52,6 +66,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-deep-black text-white antialiased font-inter overflow-x-hidden">
+        <ScrollToTop />
         {children}
       </body>
     </html>
