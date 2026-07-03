@@ -50,6 +50,7 @@ export interface Achievement {
   category: string;
   icon: string;
   color: string;
+  year: string;
 }
 
 export interface Certification {
