@@ -353,6 +353,7 @@ export const achievements: Achievement[] = [
     category: "Academic",
     icon: "🎓",
     color: "#f59e0b",
+    year: "2026"
   },
   {
     id: "hackathons",
@@ -361,6 +362,7 @@ export const achievements: Achievement[] = [
     category: "Competition",
     icon: "🏆",
     color: "#7b2fff",
+    year: "2026"
   },
   {
     id: "projects",
@@ -369,6 +371,7 @@ export const achievements: Achievement[] = [
     category: "Projects",
     icon: "🚀",
     color: "#00d4ff",
+    year: "2025"
   },
   {
     id: "leadership",
@@ -377,6 +380,7 @@ export const achievements: Achievement[] = [
     category: "Leadership",
     icon: "👑",
     color: "#e62b1e",
+    year: "2024"
   },
   {
     id: "tedx-organizer",
@@ -385,6 +389,7 @@ export const achievements: Achievement[] = [
     category: "Leadership",
     icon: "🎤",
     color: "#ff2d9b",
+    year: "2026"
   },
   {
     id: "ai-platform",
@@ -393,6 +398,7 @@ export const achievements: Achievement[] = [
     category: "Technical",
     icon: "🤖",
     color: "#10b981",
+    year: "2025"
   },
   {
     id: "hardware",
@@ -401,6 +407,7 @@ export const achievements: Achievement[] = [
     category: "Technical",
     icon: "🔌",
     color: "#0066ff",
+    year: "2025"
   },
 ];
 
