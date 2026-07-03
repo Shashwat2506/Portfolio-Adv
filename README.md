@@ -52,7 +52,7 @@ exist together as one digital universe.
 
 🌐 Portfolio:
 
-https://s-portfolio-beige.vercel.app/
+https://portfolio-adv-gamma.vercel.app/
 
 
 ---
